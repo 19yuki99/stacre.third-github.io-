@@ -1,0 +1,293 @@
+@charset "utf-8";
+* {box-sizing: border-box;}
+body, p, li {
+  font-family: "Noto-serif", "Noto-serif JP", sans-serif;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+h2, h3, h4, a {
+  text-decoration: none;
+  font-weight:normal;
+}
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100vw;
+}
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title {
+  padding: 30px 60px;
+  position: fixed;
+  z-index: 2;
+}
+.header-title.black svg path{
+  fill: #333;
+  transition: fill .3s;
+}
+.btn-menu {
+  color: #fff;
+  margin-left: 20px;
+}
+.burger-btn {
+  display: flex;
+  height: 39px;
+  align-items: center;
+  position: fixed;
+  top: 30px;
+  right: 4vw;
+  z-index: 3;
+  background-color: transparent;
+  border: none;
+}
+.bars {
+  margin-right: 20px;
+}
+.bar.cross.bar_top {
+  transform: rotate(20deg);
+  transition: transform .3s;
+}
+.bar.cross.bar_middle {
+  opacity: 0;
+  transition: opacity .3s;
+}
+.bar.cross.bar_bottom {
+  transform: rotate(-20deg);
+  transition: transform .3s;
+}
+.burger-btn.black .bar{
+  background-color: #333;
+  transition: background-color .3s;
+}
+.burger-btn.black .btn-menu{
+  color: #333;
+  transition: color .3s;
+}
+.bar {
+  width: 30px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+}
+.bar_top {
+  transform: translateY(-10px);
+}
+.bar_bottom {
+  transform: translateY(10px);
+}
+.nav-wrapper {
+  background-color: rgba(32, 32, 32, 0.87);
+  width: 30%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform .5s,opacity .5s;
+  opacity: 0;
+}
+.nav-wrapper.open {
+  transform: translateX(0);
+  transition: transform .5s,opacity .5s;
+  display: unset;
+  opacity: 1;
+}
+.nav-list {
+  padding: 0;
+  top: 30%;
+  left: 40%;
+  position: absolute;
+}
+.nav-list img, .nav-list li {
+  margin-bottom: 20px;
+}
+.nav-item a {
+  list-style: none;
+  color: #fff;
+}
+body.noscroll {
+  overflow: hidden;
+}
+
+.fv {
+  position: relative;
+  height: 464px;
+}
+.fv::after {
+  content: "";
+  background-color: black;
+  z-index: -1;
+  position: absolute;
+  display: block;
+  width: 54%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+.kv-wrapper {
+  position: relative;
+  background-image: url(img/heading-img@2x.png);
+  background-size: cover;
+  background-position: center 0;
+  width: 77%;
+  height: 87%;
+}
+.main-copy {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  right: 0;
+  transform: translate(35%,-50%);
+}
+.top-copy {
+  font-size: 72px;
+  line-height: 90px;
+}
+.bottom-copy {
+  font-size: 1.3em;
+}
+#vision {
+  padding: 70px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.vision-text h4 {
+  color: rgb(78, 78, 78);
+  line-height: 40px;
+}
+.message-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.message-wrapper img {
+  width: 38%;
+  height: 40%;
+  position: relative;
+  z-index: 1;
+}
+.ceo-message {
+  z-index: -1;
+  transform: translate(40%,-14%);
+  display: block;
+  width: 65%;
+  height: 80%;
+  background-color: rgb(236, 236, 236)
+}
+.ceo-text {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  line-height: 35px;
+  color: rgb(78, 78, 78);
+}
+#company {
+  width: 78.6%;
+  margin: 0 auto;
+}
+.company-wrapper h1 {
+  border-bottom: 2px rgb(212, 212, 212) solid;
+  margin: 0;
+}
+.company-detail {
+  margin-left: auto;
+  padding: 10px 0 50px;
+  max-width: 800px;
+}
+.company-content {
+  display: flex;
+  padding: 15px;
+  border-bottom: 2px rgb(212, 212, 212) solid;
+}
+.company-left {
+  flex-basis: 140px;
+}
+.map {
+  margin-bottom: 80px;
+}
+footer small {
+  width: 100vw;
+  height: 50px;
+  color: #fff;
+  background-color: rgb(65, 65, 65);
+}
+.item-center {
+  display: grid;
+  place-items: center;
+}
+
+
+@media(max-width: 768px){
+  .main-copy {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    right: 0;
+    transform: translate(25%,-50%);
+  }
+  .top-copy {
+    font-size: 50px;
+  }
+  .header-title {
+    padding: 30px;
+    width: 250px;
+  }
+  .message-wrapper img {
+    margin-left: 30px;
+    width: 340px;
+    height: 230px;
+  }
+  .ceo-text {
+    margin: 0 auto;
+    padding: 140px 20px 80px;
+    line-height: 35px;
+    color: rgb(78, 78, 78);
+  }
+  .company-content {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    margin-right: 480px;
+    border-bottom: 2px rgb(212, 212, 212) solid;
+  }
+  .burger-btn {
+    height: 29px;
+    top: 30px;
+  }
+  .nav-wrapper {
+    width: 60%;
+  }
+
+}
+
+@media(max-width: 457px){
+  .message-wrapper img {
+    margin: 0;
+  }
+  .ceo-message {
+    z-index: -1;
+    transform: translate(5.5%,-14%);
+    display: block;
+    width: 90%;
+    height: 80%;
+    background-color: rgb(236, 236, 236)
+  }
+  .nav-list {
+    left: 30%;
+  }
+  #company {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0;
+}
+
+}
